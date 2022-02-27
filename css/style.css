@@ -1,6 +1,16 @@
+@font-face {
+    font-family: "Montserrat";
+    src: url("../font/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
+}
+html{
+    --red : red;
+    --dark-grey : #333;
+    --light-grey : #bbb;
+    --white : #fff;
+}
 body {
-    font-family: Montserrat, sans-serif;
-    background-color: white;
+    font-family: "Montserrat", sans-serif;
+    background-color: var(--white);
 }
 .container {
     display: flex;
@@ -8,7 +18,9 @@ body {
     max-width: 80%;
     margin: 5% 10%;
 }
+
 /******************* header ******************/
+
 .header {
     text-transform: uppercase;
     display: flex;
@@ -20,7 +32,7 @@ body {
     letter-spacing: 2px;
 }
 .header__logo:hover {
-    color: red;
+    color: var(--red);
 }
 .header__nav {
     display: flex;
@@ -29,13 +41,21 @@ body {
     list-style: none;
     font-size: 0.8em;
     letter-spacing: 2px;
+    color: var(--light-grey);
 }
-
+.active {
+    color: var(--dark-grey);
+}
+.header__nav-link:hover {
+    color: var(--dark-grey);
+}
 .header__burger {
     display: none;
 }
 
+
 /******************* main ******************/
+
 .main{
     display: flex;
     flex-direction: row;
@@ -44,18 +64,16 @@ body {
     flex-wrap: wrap;
     margin-bottom: 4.5%;
 }
-
 .main__card {
     width: 30%;
     transition-duration: .5s;
 }
-
 .main__card:hover {
     transition-duration: .5s;
     opacity: 0.7;
     transform: scale(1.03);
+    cursor: pointer;
 }
-
 .main__card-img {
     width: 100%;
 }
@@ -66,10 +84,12 @@ body {
     text-transform: uppercase;
     font-family: Montserrat, sans-serif;
     font-size: 0.8em;
-    color: #333;
+    color: var(--dark-grey);
     letter-spacing: 1px;
 }
+
 /******************* footer ******************/
+
 .footer{
     display: flex;
     flex-direction: column;
@@ -84,7 +104,7 @@ body {
 .footer__h3 {
     margin-top: 1%;
     margin-bottom: 5%;
-    color: #bbb;
+    color: var(--light-grey);
     font-size: 0.8em;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -95,7 +115,9 @@ body {
     margin-right: 10px;
     margin-left: 10px;
 }
+
 /******************* meedia queries ******************/
+
 @media only screen and (max-width:768px) {
     .container {
         max-width: 100%;
@@ -118,14 +140,12 @@ body {
         text-transform: uppercase;
         font-family: Montserrat, sans-serif;
         font-size: 0.8em;
-        color: #333;
+        color: var(--dark-grey);
         letter-spacing: 1px;
     }
-
     .header__nav {
         display: none;
     }
-
     .header__burger {
         display: block;
     }
